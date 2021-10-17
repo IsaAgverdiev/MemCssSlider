@@ -8,11 +8,13 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #333;
+  color: #fff;
 }
 
 .header {
   margin: 0;
-  padding: 20px;
+  padding: 1.25rem;
   /* background-color: #64b5f6; */
   animation: bgColor 1s infinite;
   transition: 0.35s;
@@ -46,7 +48,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
   color: #fff;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 
 .cssMemSlider {
@@ -92,7 +94,7 @@ body {
 .slide {
   width: 100%;
   height: 100%;
-  flex-shrink: 1;
+  flex-shrink: 0;
   transition: 0.35s;
 }
 .slide-img {
@@ -102,7 +104,7 @@ body {
 }
 
 /* переключение слайдов */
-#swich1:checked ~ .slides .slides-wrap .slide-1 {
+/* #swich1:checked ~ .slides .slides-wrap .slide-1 {
   transition: 0.35s;
   flex-shrink: 0;
 }
@@ -117,6 +119,18 @@ body {
 #swich4:checked ~ .slides .slides-wrap .slide-4 {
   transition: 0.35s;
   flex-shrink: 0;
+} */
+#swich1:checked ~ .slides .slides-wrap .slide {
+  transform: translateX(0);
+}
+#swich2:checked ~ .slides .slides-wrap .slide {
+  transform: translateX(-100%);
+}
+#swich3:checked ~ .slides .slides-wrap .slide {
+  transform: translateX(-200%);
+}
+#swich4:checked ~ .slides .slides-wrap .slide {
+  transform: translateX(-300%);
 }
 /* переключерение текста */
 #swich1:checked ~ .discr .discr-1 {
@@ -154,6 +168,7 @@ body {
   width: 1rem;
   height: 1rem;
   background-color: #64b5f6;
+  border: 0.125rem solid #64b5f6;
 }
 
 .active {
@@ -162,13 +177,15 @@ body {
 
 .active label:hover .label-circl {
   background-color: #bbdefb;
+  border-color: #bbdefb;
 }
 
 #swich1:checked ~ .active label:nth-child(1) .label-circl,
 #swich2:checked ~ .active label:nth-child(2) .label-circl,
 #swich3:checked ~ .active label:nth-child(3) .label-circl,
 #swich4:checked ~ .active label:nth-child(4) .label-circl {
-  background: #1976d2;
+  background: transparent;
+  border-color: #1976d2;
 }
 
 .slides .slides-wrap {
